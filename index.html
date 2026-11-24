@@ -5,96 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHTV24 - AI News Studio</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f5f5f5}
-.header{background:#fff;padding:16px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.08);position:sticky;top:0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f5f5f5;font-family:sans-serif}
+.header{background:#fff;padding:16px;text-align:center}
 .header h1{font-size:28px}
 .header h1 span{color:#d60000}
 .header p{color:#666;font-size:13px;margin-top:4px}
-.live{display:inline-block;background:#d60000;color:#fff;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:bold;margin-top:8px}
-.cats{display:flex;gap:8px;overflow-x:auto;padding:12px;background:#fff}
-.cats button{white-space:nowrap;padding:8px 16px;border:1px solid #ddd;border-radius:20px;background:#fff;cursor:pointer}
-.cats button.active{background:#111;color:#fff}
-.wrap{padding:12px;max-width:700px;margin:auto}
-.card{background:#fff;border-radius:14px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-.card img{width:100%;height:200px;object-fit:cover}
-.card-body{padding:14px}
-.card-body h3{font-size:18px;line-height:1.4}
-.card-body p{color:#666;font-size:13px;margin-top:6px;line-height:1.5}
-.badge{display:inline-block;background:#fff3cd;color:#856404;padding:4px 10px;border-radius:12px;font-size:11px;font-weight:bold}
-.btn{width:100%;padding:12px;border:none;border-radius:10px;font-weight:bold;cursor:pointer;margin-top:10px;font-size:15px}
-.btn-ai{background:#111;color:#fff}
-.btn-yt{background:#d60000;color:#fff}
-.btn-fb{background:#1877F2;color:#fff}
-.box{background:#fff;border-radius:14px;padding:16px;margin-bottom:14px}
-.box h2{font-size:19px;margin-bottom:8px}
-textarea{width:100%;height:90px;padding:10px;border:1px solid #ddd;border-radius:10px;margin-top:10px;font-size:14px}
-#scriptBox{background:#f8f9fa;border:1px dashed #ccc;border-radius:10px;padding:12px;margin-top:12px;font-size:14px;line-height:1.6;white-space:pre-wrap;display:none}
-.footer{text-align:center;color:#888;font-size:12px;padding:20px}
+.live{display:inline-block;background:#d60000;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:12px}
+.cats span{background:#fff;padding:8px 14px;border-radius:20px;font-size:13px;white-space:nowrap}
+.card{background:#fff;margin:12px;padding:14px;border-radius:12px}
+.card h2{font-size:18px;margin-bottom:6px}
+.card p{font-size:14px;color:#444;line-height:1.6}
+.btn{display:inline-block;background:#d60000;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;margin-top:10px}
+.social{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px}
+.social a{background:#111;color:#fff;padding:9px 14px;border-radius:20px;text-decoration:none;font-size:13px}
+.ghost{background:#111;color:#fff}
+.ghost p{color:#ddd}
+.footer{text-align:center;padding:16px;color:#888;font-size:12px}
 </style>
 </head>
 <body>
 
 <div class="header">
-<h1>SHTV24 <span>AI NEWS STUDIO</span></h1>
-<p>সত্য খবর • AI স্ক্রিপ্ট • লাইভ স্টুডিও</p>
-<div class="live">● LIVE STUDIO</div>
+<h1>SHTV<span>24</span> NEWS</h1>
+<p>সত্য খবর, AI স্ক্রিপ্ট, লাইভ স্টুডিও - Made in Sylhet</p>
+<span class="live">● LIVE • 47,826 Views</span>
 </div>
 
 <div class="cats">
-<button class="active" onclick="filterNews('all',this)">সব খবর</button>
-<button onclick="filterNews('sylhet',this)">সিলেট</button>
-<button onclick="filterNews('bangladesh',this)">বাংলাদেশ</button>
-<button onclick="filterNews('world',this)">আন্তর্জাতিক</button>
-<button onclick="filterNews('tech',this)">প্রযুক্তি</button>
+<span>📰 সর্বশেষ</span><span>👻 ভূতের গল্প</span><span>🍵 চা বাগান</span><span>🏏 খেলা</span><span>🎬 ভিডিও</span>
 </div>
 
-<div class="wrap">
-
-<div class="box">
-<h2>🎙️ AI নিউজ স্ক্রিপ্ট বানাও</h2>
-<p style="color:#666;font-size:13px">একটা টপিক লেখো, AI স্ক্রিপ্ট বানাইয়া দিবো।</p>
-<textarea id="topic" placeholder="যেমন: সিলেটে চা বাগানে পর্যটকদের ভিড়..."></textarea>
-<button class="btn btn-ai" onclick="makeScript()">✨ Generate Script</button>
-<div id="scriptBox"></div>
+<div class="card">
+<h2>👻 চা বাগানের সাদা শাড়ি - সত্যি ঘটনা?</h2>
+<p>রাত ১২টা। সিলেটের চা বাগান। পাহারাদার রহিম চাচা দেখলো সাদা শাড়ি পরা এক মেয়ে চা গাছের মাঝে হাইট্টা যাইতেছে... মেয়েটা খালি কইলো "আয়ো..." পরের দিন সকালে ওই জায়গাত এক কাপ চা পাওয়া গেলো!</p>
+<a class="btn" href="#">▶️ পুরা গল্প দেখো</a>
 </div>
 
-<div id="newsList"></div>
-
-<a href="https://youtube.com/@SHTV24NEWSBD" target="_blank" style="text-decoration:none"><button class="btn btn-yt">▶️ YouTube - SHTV24 NEWS দেখুন</button></a>
-<a href="https://www.facebook.com/share/1A5ow2HDnf/" target="_blank" style="text-decoration:none"><button class="btn btn-fb">📘 Facebook - সব ভিডিও দেখুন</button></a>
-
+<div class="card">
+<h2>🌐 SHTV24 EMPIRE - 12 Platforms - 8000+ Family</h2>
+<p style="text-align:center">Facebook 5K ❤️ TikTok 3.1K ❤️ YouTube 3K ❤️ Vimeo 7 Videos</p>
+<div class="social">
+<a href="https://youtube.com/@SHTV24NEWSBD">▶️ YouTube</a>
+<a href="https://facebook.com/">📘 Facebook</a>
+<a href="https://tiktok.com/@shtv24news">🎵 TikTok</a>
+<a href="https://instagram.com/shtv24news">📸 Instagram</a>
+<a href="https://x.com/shtv24news">𝕏 Twitter</a>
+<a href="https://linkedin.com/">💼 LinkedIn</a>
+<a href="https://vimeo.com/">🎬 Vimeo</a>
+<a href="https://t.me/shtv24news">✈️ Telegram</a>
+<a href="https://threads.net/">🧵 Threads</a>
+</div>
 </div>
 
-<div class="footer">© 2026 SHTV24 • Made in Sylhet, Bangladesh • AI News Studio</div>
+<div class="card ghost">
+<h2>🍵 সিলেটের চা বাগান</h2>
+<p>চা বাগান কখনো ঘুমায় না! রোজ রাইতে রহিম চাচা ওই জায়গাত এক কাপ চা রাখিয়া আসে। তুমি কি রাইতে চা বাগানে যাইবা?</p>
+</div>
 
-<script>
-const news = [
-{cat:'sylhet', title:'সিলেটে চা বাগানে পর্যটকদের ভিড় বেড়েছে', desc:'শীতের মৌসুমে সিলেটের চা বাগানগুলোতে পর্যটকদের আনাগোনা বেড়েছে। স্থানীয় ব্যবসায়ীরা বলছেন, এবার রেকর্ড সংখ্যক পর্যটক এসেছেন।', img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800', tag:'সিলেট'},
-{cat:'bangladesh', title:'বাংলাদেশে নতুন ডিজিটাল সেবা চালু', desc:'তরুণ উদ্যোক্তারা দেশের জন্য নতুন নতুন ডিজিটাল সমাধান নিয়ে আসছেন। প্রযুক্তিতে এগিয়ে যাচ্ছে বাংলাদেশ।', img:'https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=800', tag:'বাংলাদেশ'},
-{cat:'world', title:'বিশ্বে জলবায়ু নিয়ে নতুন আলোচনা', desc:'জলবায়ু পরিবর্তন মোকাবিলায় বিশ্ব নেতারা একসাথে কাজ করার প্রতিশ্রুতি দিয়েছেন।', img:'https://images.unsplash.com/photo-1495020689067-958852a7765e?w=800', tag:'আন্তর্জাতিক'},
-{cat:'tech', title:'AI দিয়ে এখন ঘরে বসেই নিউজ স্টুডিও', desc:'SHTV24 এর মতো AI স্টুডিও দিয়ে এখন যে কেউ ঘরে বসেই প্রফেশনাল নিউজ বানাতে পারছে।', img:'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800', tag:'প্রযুক্তি'}
-];
+<div class="footer">© 2026 SHTV24 • Made in Sylhet • Mohammad Samim Uddin</div>
 
-function showNews(filter='all'){
-  const list = document.getElementById('newsList');
-  list.innerHTML = '';
-  news.filter(n => filter==='all' || n.cat===filter).forEach(n=>{
-    list.innerHTML += `<div class="card"><img src="${n.img}"><div class="card-body"><span class="badge">${n.tag}</span><h3 style="margin-top:8px">${n.title}</h3><p>${n.desc}</p></div></div>`;
-  });
-}
-function filterNews(cat, btn){
-  document.querySelectorAll('.cats button').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  showNews(cat);
-}
-function makeScript(){
-  const t = document.getElementById('topic').value || 'সিলেটে চা বাগানে পর্যটকদের ভিড়';
-  const box = document.getElementById('scriptBox');
-  box.style.display='block';
-  box.innerText = `🎙️ SHTV24 BREAKING NEWS\n\nআসসালামু আলাইকুম, SHTV24 এ আপনাদের স্বাগতম।\n\nআজকের প্রধান খবর: ${t}\n\nবিস্তারিত: এই বিষয়ে আমাদের প্রতিনিধি ঘটনাস্থল থেকে জানিয়েছেন, পরিস্থিতি এখন নিয়ন্ত্রণে আছে এবং সাধারণ মানুষের মধ্যে ইতিবাচক সাড়া দেখা যাচ্ছে।\n\nআরো আপডেট পেতে SHTV24 এর সাথেই থাকুন।\n\n- SHTV24 AI Studio`;
-}
-showNews();
-</script>
 </body>
 </html>
